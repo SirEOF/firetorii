@@ -20,7 +20,20 @@ module.exports = function(environment) {
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
+    },
+
+    firebase: {
+      apiKey: "AIzaSyA6E47Tntslp0TPSYmm2EZNNOsBEBIpy44",
+      authDomain: "dreamteam-3e353.firebaseapp.com",
+      databaseURL: "https://dreamteam-3e353.firebaseio.com",
+      projectId: "dreamteam-3e353",
+      storageBucket: "dreamteam-3e353.appspot.com",
+      messagingSenderId: "134709081796"
+    },
+    torii: {
+      sessionServiceName: 'session'
     }
+
   };
 
   if (environment === 'development') {
