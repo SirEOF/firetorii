@@ -4,6 +4,14 @@
    transform: translateX(-50%);
 }
 
+.navbar-brand {
+    float: left;
+    height: 50px;
+    padding: 0px 0px;
+    font-size: 18px;
+    line-height: 20px;
+}
+
 li {
   padding-right: 30px;
   position: relative;
@@ -49,6 +57,7 @@ h1 + p {
 
 .scoreWrap {float: left;}
 .timeWrap {float: right;}
+.opScoreWrap { float: left; display: inline-block; margin-left: 80px;}
 
 .outerWrap:after {
 	content: "";
@@ -61,7 +70,7 @@ h1 + p {
 }
 
 button {
-   border: none;
+  border: none;
   background-color: #FF7373;
   box-shadow: 0px 5px 0px 0px #CE4646;
   outline: none;
@@ -82,7 +91,7 @@ button:active {
   box-shadow: 0px 1px 0px 0px;
 }
 
-.scoreWrap p, .scoreWrap span, .timeWrap p, .timeWrap span {
+.opScoreWrap p, .opScoreWrap span, .scoreWrap p, .scoreWrap span, .timeWrap p, .timeWrap span {
     font-size: 30px;
     color: #FF7373;
 }
