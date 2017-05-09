@@ -8,21 +8,18 @@
 
 <nav class="navbar navbar-inverse navbar-fixed-bottom">
   <div class="navbar-header">
-    <a class="brand navbar-brand">TYPER</a>
-  </div>
-  <ul class="nav navbar-nav navbar-right">
-    <li><a>Chat</a></li>
-  </ul>
-  <ul class="nav navbar-nav navbar-left">
-    <li>
+    <a class="brand navbar-brand">
       {{#if session.isAuthenticated}}
-        <a>
+        <p>
           Welcome {{session.currentUser.displayName}} - <a {{action "signOut"}}>Sign Out</a>
-        </a>
+        </p>
       {{else}}
         <a {{action "signIn" "facebook"}} class="btn">Sign In</a>
       {{/if}}
-    </li>
+    </a>
+  </div>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a>Chat</a></li>
   </ul>
 </nav>
 

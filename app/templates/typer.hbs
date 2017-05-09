@@ -1,48 +1,9 @@
 {{#if session.isAuthenticated}}
   <h1 align="center">TYPER</h1>
 
-  <!-- player labels -->
-  <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-4">
-          <h1 align="center">{{model}}</h1>
-        </div>
-        <div class="col-sm-4">
-          <!--<iframe src="https://open.spotify.com/embed?uri=spotify%3Auser%3Aspotify%3Aplaylist%3A2PXdUld4Ueio2pHcB6sM8j&theme=white" width="400" height="200" frameborder="0" allowtransparency="true"></iframe>
-          -->
-          <p align="center"></p>
-        </div>
-        <div class="col-sm-4">
-          <h1 align="center"></h1>
-        </div>
-      </div>
-  </div>
-
-  <!-- player labels -->
-  <div class="container-fluid">
-      <div class="row">
-        <div class="col-lg-6">
-          <h1 align="center">{{session.currentUser.displayName}}</h1>
-        </div>
-        <div class="col-lg-6">
-          <h1 align="center">Player 2</h1>
-        </div>
-      </div>
-  </div>
-
-
-  <div class="container-fluid">
-      <div class="row">
-        <div id="player1" class="player col-lg-6">
-        </div>
-        <div id="player2" class="player col-lg-6">
-        </div>
-      </div>
-  </div>
-
   <div class="wrapper">
 		<h1>Welcome {{session.currentUser.displayName}}</h1>
-		<p>Type as many words as you can until time runs out!</p>
+		<h5>Opponent: <span>someoppenent</span></h5>
 		<button>START</button>
 		<div class="outerWrap">
 			<div class="scoreWrap">
