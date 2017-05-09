@@ -1,8 +1,21 @@
-<a {{action "signIn" "facebook"}} class="btn">FB</a>
-
-{{#if session.isAuthenticated}}
-  <span>Currently logged in as {{session.currentUser.displayName}} with
-    {{session.provider}} - <a {{action "signOut"}}>Sign out</a></span>
-{{/if}}
+<nav class="navbar navbar-inverse navbar-fixed-bottom">
+  <div class="navbar-header">
+    <a class="brand navbar-brand">TYPER</a>
+  </div>
+  <ul class="nav navbar-nav navbar-right">
+    <li><a>Chat</a></li>
+  </ul>
+  <ul class="nav navbar-nav navbar-left">
+    <li>
+      {{#if session.isAuthenticated}}
+        <a>
+          Welcome {{session.currentUser.displayName}} - <a {{action "signOut"}}>Sign Out</a>
+        </a>
+      {{else}}
+        <a {{action "signIn" "facebook"}} class="btn">Sign In</a>
+      {{/if}}
+    </li>
+  </ul>
+</nav>
 
 {{outlet}}

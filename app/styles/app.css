@@ -1,0 +1,17 @@
+.navbar-header{
+   left: 50%;
+   position: relative;
+   transform: translateX(-50%);
+}
+
+li {
+  padding-right: 30px;
+  position: relative;
+}
+
+.player {
+  border: 5px solid #000000;
+  border-radius: 10px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
