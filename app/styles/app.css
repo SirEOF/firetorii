@@ -1,16 +1,42 @@
-.navbar-header {
-  left: 50%;
-  position: relative;
-  transform: translateX(-50%);
-}
+
 
 li {
   padding-right: 30px;
   position: relative;
 }
 
-body {
-  background-color: #5C5D5E;
+li:hover {
+  color: #9B9687 !important;
+}
+
+.navbar{
+  background: #222120;
+  border-left-color: #222120;
+  border-bottom-color: #222120;
+  border-right-color: #222120;
+  border-top-color: #222120;
+  color: #605E56 !important;
+}
+
+.navbar-brand
+{
+    position: absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    margin:0 auto;
+    font-size:22px;
+}
+.navbar-brand:hover{
+  color:
+}
+.navbar-toggle {
+    z-index:3;
+}
+
+body, h1 {
+  font-family: 'Advent Pro';font-size: 22px;
+  background-color: #222120;
 }
 
 #title {
@@ -21,6 +47,7 @@ body {
 #fbsignin {
   font-family: 'Syncopate', sans-serif;
   font-weight: bold;
+  color: #3b5998;
 }
 
 .jumbotron{
@@ -36,14 +63,18 @@ body {
   border: 1px solid black;
   border-collapse: separate;
   border-spacing: 10px;
+  background: #4286f4;
+  border: 1px;
+  border-color: black;
 }
 
 .board button {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  border: 0;
+  border: 1;
   background: #bbb;
+  border-color: black;
 }
 
 button.red {

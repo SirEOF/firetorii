@@ -1,22 +1,32 @@
-<div class="jumbotron">
-  <h1 class="text-center" id="title">Connect Four</h1>
-</div>
-<nav class="navbar navbar-inverse navbar-fixed-bottom">
+<link href='//fonts.googleapis.com/css?family=Advent Pro' rel='stylesheet'>
+
+<nav class="navbar navbar-default" role="navigation">
   <div class="navbar-header">
-    <a class="brand navbar-brand">
-      {{#if session.isAuthenticated}}
-        <p id="hey">
-          Welcome {{session.currentUser.displayName}} - <a {{action "signOut"}}>Sign Out</a>
-        </p>
-      {{else}}
-        <a {{action "signIn" "facebook"}} class="btn">{{fa-icon "facebook-official" style="font-size:20px"}} Sign In</a>
-      {{/if}}
-    </a>
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
   </div>
-  <ul class="nav navbar-nav navbar-right">
-    <li>{{#link-to 'connect4'}}Connect 4{{/link-to}}</li>
-    <li>{{#link-to 'chat'}}Chat{{/link-to}}</li>
-  </ul>
+  <a class="navbar-brand">Connect <strong><em>4</em></strong></a>
+  <div class="navbar-collapse collapse">
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+          {{#if session.isAuthenticated}}
+            <a>
+              Welcome {{session.currentUser.displayName}} - <a {{action "signOut"}}>Sign Out</a>
+            </a>
+          {{else}}
+            <a {{action "signIn" "facebook"}} class="btn">{{fa-icon "facebook-official" style="font-size:20px"}} Sign In</a>
+        {{/if}}
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li>{{#link-to 'connect4'}}Connect 4{{/link-to}}</li>
+      <li>{{#link-to 'chat'}}Chat{{/link-to}}</li>
+    </ul>
+  </div>
 </nav>
+
 
 {{outlet}}

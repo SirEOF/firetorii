@@ -24,7 +24,7 @@ module.exports = function(environment) {
     contentSecurityPolicy: {
       'default-src': "'none'",
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
-      'connect-src': "'self' ws://localhost:7000 localhost:7000",
+      'connect-src': "'self' ws://localhost:3001 localhost:3001",
       'img-src': "'self'",
       'report-uri': "'localhost'",
       'frame-src': "'none'",
