@@ -1,0 +1,78 @@
+{{#if session.isAuthenticated}}
+
+  <body>
+
+    <section class="wrapper">
+      <div class="info">
+        <h2 class="message"><span class="prefix"></span><span id="player" class="player">&nbsp;</span></h2>
+        <a href="#" class="play-again" style="display: none;">Play Again</a>
+      </div>
+      <table class="board">
+        <tbody>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+          <tr>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+            <td><button type="button"></button></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </body>
+{{else}}
+  <div class="containter text-center">
+    <h1 class="text-center" id="fbsignin">Sign in with Facebook</h1>
+    <a {{action "signIn" "facebook"}}><img style="display:inline-block" class="img-responsive" src="https://www.facebook.com/images/fb_icon_325x325.png"></a>
+  </div>
+{{/if}}
+
+
+{{outlet}}

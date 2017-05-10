@@ -14,8 +14,8 @@ Router.map(function() {
     this.route('typer');
   });
   */
-  this.route('typer');
-  this.route('chat');
+  this.route('connect4');
+  this.authenticatedRoute('chat');
 });
 
 export default Router;

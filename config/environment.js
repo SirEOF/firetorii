@@ -22,15 +22,19 @@ module.exports = function(environment) {
       // when it is created
     },
     contentSecurityPolicy: {
-             'default-src': "'none'",
-             'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
-             'font-src': "'self'",
-             'connect-src': "'self' ws://localhost:7000 localhost:7000",
-             'img-src': "'self'",
-             'report-uri':"'localhost'",
-             'style-src': "'self' 'unsafe-inline'",
-             'frame-src': "'none'"
-           },
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval'",
+      'connect-src': "'self' ws://localhost:7000 localhost:7000",
+      'img-src': "'self'",
+      'report-uri': "'localhost'",
+      'frame-src': "'none'",
+      'font-src': "'self' fonts.gstatic.com",
+      'style-src': "'self' fonts.googleapis.com"
+    },
+    googleFonts: [
+      'Syncopate:400,700'
+    ],
+
 
     firebase: {
       apiKey: "AIzaSyA6E47Tntslp0TPSYmm2EZNNOsBEBIpy44",
@@ -42,7 +46,7 @@ module.exports = function(environment) {
     },
     torii: {
       sessionServiceName: 'session'
-    }
+    },
 
   };
 
