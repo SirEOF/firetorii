@@ -1,4 +1,33 @@
-<h1>Chatroom</h1><br><br>
+<h3 align=center>ChatRoom</h3>
+<link rel="styles" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+<link rel="styles" href="styles/chat.css">
+
+<body class="container chat-wrapper">
+
+  <header class="chat-app-header">
+  </header>
+
+  <div class="panel panel-default chat-messages">
+    <ul class="panel-body chat-message-list" data-chat="message-list"></ul>
+  </div>
+
+  <section class="chat-input">
+    <form data-chat="chat-form" class="cb-container">
+      <div class="input-group">
+        {{input type='text' class='form-control' data-chat='message-input' value=message id="sendButtonPressed"}}
+        <span class="input-group-btn">
+            <button class="btn btn-default" type="button"
+              id="sendButtonPressed" {{action "sendButtonPressed" message}}>Send</button>
+          </span>
+      </div>
+    </form>
+  </section>
+
+  <script src="/scripts/dist/main.js"></script>
+</body>
+
+
+<!-- <h2>Chatroom</h2>
 
 Send this message: {{message}}<br>
-<button id="sendButtonPressed" {{action "sendButtonPressed"}}>Send</button>
+<button id="sendButtonPressed" {{action "sendButtonPressed"}}>Send</button> -->
