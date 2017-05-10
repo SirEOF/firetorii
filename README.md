@@ -1,7 +1,24 @@
-# firetorii
+# Connect Four
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+Connect Four game using Ember.js and Firebase
+Login with Facebook
+Chat
+
+## Contributors:
+
+- Luis Covarrubias
+- Francis Arocha
+- Kim Phung Tran
+- Crystal Juarez
+- Andrew Michel
+
+## External Add-ons
+
+* [ember-bootstrap](http://www.ember-bootstrap.com/)
+* [ember-font-awesome](https://github.com/martndemus/ember-font-awesome)
+* [emberfire](https://github.com/firebase/emberfire)
+* [torii](https://github.com/Vestorly/torii)
+* [ember-websockets](https://github.com/thoov/ember-websockets)
 
 ## Prerequisites
 
@@ -22,24 +39,6 @@ You will need the following things properly installed on your computer.
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
 
 ## Further Reading / Useful Links
 
