@@ -19,13 +19,15 @@ export default Ember.Controller.extend({
 
   myMessageHandler: function(event) {
     console.log('Message: ' + event.data);
-    this.set('message',event.data);
+    //this.set('message',event.data);
   },
 
   actions: {
     sendButtonPressed: function(message) {
       var socket = this.get('websockets').socketFor('ws://localhost:3001/');
       socket.send(message);
+      this.set('message', '');
     }
+
   }
 });
