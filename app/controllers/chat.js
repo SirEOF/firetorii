@@ -1,17 +1,17 @@
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
+  message: '',
 
   init: function() {
     this._super();
-    var socket = this.get('websockets').socketFor('ws://localhost:7000/');
+    var socket = this.get('websockets').socketFor('ws://localhost:3001/');
     socket.on('open', this.myOpenHandler, this);
     socket.on('message', this.myMessageHandler, this);
     socket.on('close', function(event) {
         console.log('closed');
     }, this);
   },
-  message: '',
 
   myOpenHandler: function(event) {
     console.log('On open event has been called: ' + event);
@@ -23,9 +23,9 @@ export default Ember.Controller.extend({
   },
 
   actions: {
-    sendButtonPressed: function() {
-      var socket = this.get('websockets').socketFor('ws://localhost:7000/');
-      socket.send('Hello Websocket World');
+    sendButtonPressed: function(message) {
+      var socket = this.get('websockets').socketFor('ws://localhost:3001/');
+      socket.send(message);
     }
   }
 });
