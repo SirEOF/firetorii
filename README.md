@@ -1,8 +1,8 @@
 # Connect Four
 
-Connect Four game using Ember.js and Firebase
-Login with Facebook
-Chat
+* Connect Four game using Ember.js and Firebase
+* Login with Facebook
+* Chat
 
 ## Contributors:
 
