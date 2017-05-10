@@ -15,6 +15,7 @@ Router.map(function() {
   });
   */
   this.route('typer');
+  this.route('chat');
 });
 
 export default Router;
