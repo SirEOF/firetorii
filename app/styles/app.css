@@ -51,10 +51,18 @@ button.red {
   background: linear-gradient(to bottom, #ff1616 0%, #ad0505 100%);
 }
 
-button.black {
-  background: #000;
-  background: linear-gradient(to bottom, #333 0%, #000000 100%);
+button.yellow {
+  background: #b5ac13;
+  background: linear-gradient(to bottom, #efe63e 0%, #b5ac13 100%);
 }
+
+#follow button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 0;
+}
+
 
 .player {
   text-transform: capitalize;
@@ -63,7 +71,9 @@ button.black {
 .info .red {
   color: red;
 }
-
+#follow {
+  position: absolute;
+}
 .info .black {
   color: black;
 }
@@ -83,6 +93,11 @@ button.black {
   text-decoration: none;
   font-family: helvetica;
   opacity: 0.9;
+}
+
+#player{
+  font-family: 'Syncopate', sans-serif;
+  color: white;
 }
 
 .play-again:hover {
