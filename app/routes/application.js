@@ -15,7 +15,6 @@ export default Ember.Route.extend({
       }).then((data) => {
         let user = data.currentUser;
         console.log(user);
-        // Do whatever with user
       });
     },
     signOut: function() {
