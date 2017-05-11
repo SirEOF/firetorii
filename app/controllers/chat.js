@@ -1,4 +1,7 @@
 import Ember from 'ember';
+import $ from 'jquery';
+
+var LIST_SELECTOR = "[data-chat='message-list']";
 
 export default Ember.Controller.extend({
   message: '',
@@ -20,8 +23,8 @@ export default Ember.Controller.extend({
   myMessageHandler: function(event) {
     console.log('Message: ' + event.data);
     //this.set('message',event.data);
+    drawMessage(event.data);
   },
-
   actions: {
     sendButtonPressed: function(message) {
       var socket = this.get('websockets').socketFor('ws://localhost:3001/');
@@ -31,3 +34,26 @@ export default Ember.Controller.extend({
 
   }
 });
+
+function drawMessage(message) {
+  let $messageRow = $('<li>', {
+    'class': 'message-row'
+  });
+
+  /*
+  if (this.username === u) {
+    $messageRow.addClass('me');
+  }
+  */
+
+  let $message = $('<p>');
+
+  $message.append($('<span>', {
+    'class': 'message-message',
+    text: message
+  }));
+
+  $messageRow.append($message);
+  $(LIST_SELECTOR).append($messageRow);
+  $messageRow.get(0).scrollIntoView();
+}
