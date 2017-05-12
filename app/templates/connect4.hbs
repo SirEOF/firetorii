@@ -1,11 +1,13 @@
-
 {{#if session.isAuthenticated}}
   {{game-board}}
 {{else}}
+<div class="header-content">
+        <!-- <div class="header-content-inner"> -->
   <div class="containter text-center">
-    <h1 class="text-center" id="fbsignin">Sign in with Facebook</h1>
-    <a {{action "signIn" "facebook"}}><img style="display:inline-block" class="img-responsive" src="https://www.facebook.com/images/fb_icon_325x325.png"></a>
+    <h1 id="fbsignin">Connect <strong><em>4</em></strong></h1>
+    <a {{action "signIn" "facebook"}}><img src="assets/fbloginbutton.png" width='275' height ='100'></a>
   </div>
+</div>
 {{/if}}
 
 

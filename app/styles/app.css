@@ -1,5 +1,3 @@
-
-
 li {
   padding-right: 30px;
   position: relative;
@@ -9,7 +7,7 @@ li:hover {
   color: #9B9687 !important;
 }
 
-.navbar{
+.navbar {
   background: #222120;
   border-left-color: #222120;
   border-bottom-color: #222120;
@@ -18,25 +16,27 @@ li:hover {
   color: #605E56 !important;
 }
 
-.navbar-brand
-{
-    position: absolute;
-    width: 100%;
-    left: 0;
-    text-align: center;
-    margin:0 auto;
-    font-size:22px;
-}
-.navbar-brand:hover{
-  color:
-}
-.navbar-toggle {
-    z-index:3;
+.navbar-brand {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 22px;
 }
 
-body, h1 {
-  font-family: 'Advent Pro';font-size: 22px;
-  background-color: #222120;
+.navbar-brand:hover {
+  color:
+}
+
+.navbar-toggle {
+  z-index: 3;
+}
+
+body {
+  background: url(/assets/bg1.jpg);
+  font-family: 'Advent Pro';
+  font-size: 22px;
 }
 
 #title {
@@ -45,12 +45,13 @@ body, h1 {
 }
 
 #fbsignin {
-  font-family: 'Syncopate', sans-serif;
+  font-family: 'Monsteratt', sans-serif;
+  color: white;
+  font-size: 500%;
   font-weight: bold;
-  color: #3b5998;
 }
 
-.jumbotron{
+.jumbotron {
   background-color: #F6D253
 }
 
@@ -94,7 +95,6 @@ button.yellow {
   border: 0;
 }
 
-
 .player {
   text-transform: capitalize;
 }
@@ -102,9 +102,11 @@ button.yellow {
 .info .red {
   color: red;
 }
+
 #follow {
   position: absolute;
 }
+
 .info .black {
   color: black;
 }
@@ -126,7 +128,7 @@ button.yellow {
   opacity: 0.9;
 }
 
-#player{
+#player {
   font-family: 'Syncopate', sans-serif;
   padding-left: 73px;
   color: white;
@@ -155,8 +157,7 @@ html, body {
 }
 
 body {
-  padding-bottom: 10px
-  background: #403D33;
+  padding-bottom: 10px background: #403D33;
 }
 
 .chat-wrapper {
@@ -164,6 +165,7 @@ body {
   height: 100%;
   flex-direction: column;
 }
+
 .chat-messages {
   flex: 3;
   overflow-y: auto;
@@ -196,9 +198,10 @@ ul, ul.panel-body {
 
 .me {
   /* justify-content: flex-end; */
-  flex-direction: row-reverse;      }
+  flex-direction: row-reverse;
+}
 
-.me img{
+.me img {
   padding-right: 0;
   padding-left: 1em;
 }
@@ -215,11 +218,18 @@ ul, ul.panel-body {
   display: block;
 }
 
-.message-username + .timestamp {
+.message-username+.timestamp {
   padding-left: 8px;
 }
 
 .timestamp {
   font-style: italic;
   /*        display: block; */
+}
+
+.header-content {
+  position: relative;
+  text-align: center;
+  padding: 100px 15px 100px;
+  width: 100%;
 }
