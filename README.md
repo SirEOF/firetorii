@@ -20,6 +20,8 @@
 * [torii](https://github.com/Vestorly/torii)
 * [ember-websockets](https://github.com/thoov/ember-websockets)
 
+* background image: http://smashingyolo.com/wp-content/uploads/2014/05/Best-Website-Background-Images6.jpg
+
 ## Prerequisites
 
 You will need the following things properly installed on your computer.
