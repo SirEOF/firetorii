@@ -1,7 +1,25 @@
 import Ember from 'ember';
+import $ from 'jquery';
 
 
 export default Ember.Component.extend({
+  message: { board: '' },
+  /* to talk to the server */
+  init: function() {
+    this._super();
+    var socket = this.get('websockets').socketFor('ws://localhost:3001/');
+    socket.on('open', this.myOpenHandler, this);
+    socket.on('message', this.myMessageHandler, this);
+    socket.on('close', function(event) {
+        console.log('closed');
+    }, this);
+  },
+  myOpenHandler: function(event) {
+    console.log('On open event has been called: ' + event);
+  },
+  myMessageHandler: function(event) {
+    console.log('Message: ' + event.data);
+  },
   didInsertElement: function(){
     /*
     Ember.$('body').on('mousemove', function(e){
@@ -52,10 +70,14 @@ export default Ember.Component.extend({
         }
       }
       this.get('connect4').changeColor();
+      var socket = this.get('websockets').socketFor('ws://localhost:3001/');
+      socket.send(this.get('connect4').getState());
       //this.$("#follow > button").attr('', 'yellow');
-
-
+    },
+    sendButtonPressed: function(message) {
+      var socket = this.get('websockets').socketFor('ws://localhost:3001/');
+      socket.send(message);
+      this.set('message', '');
     }
-
   }
 });
