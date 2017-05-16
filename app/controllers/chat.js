@@ -27,7 +27,7 @@ export default Ember.Controller.extend({
   },
   actions: {
     sendButtonPressed: function(message) {
-      var socket = this.get('websockets').socketFor('ws://localhost:3001/');
+      const socket = this.get('websockets').socketFor('ws://localhost:3001/');
       socket.send(message);
       this.set('message', '');
     }
