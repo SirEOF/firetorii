@@ -1,6 +1,5 @@
 import Ember from 'ember';
 
-let player = 'red';
 let board = [
   [0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, 0, 0, 0, 0],
@@ -12,6 +11,9 @@ let board = [
 
 export default Ember.Service.extend({
   websockets: Ember.inject.service(),
+  setBoard: function(recvboard){
+    board = recvboard;
+  },
   checkYCord: function(xcord, ycord) {
     for (var y = 5; y > ycord; y--) {
       if (board[y][xcord] === 0)
@@ -34,18 +36,11 @@ export default Ember.Service.extend({
       return true;
     }
   },
-  updateBoard: function(xcord, ycord) {
+  updateBoard: function(xcord, ycord, player) {
     board[ycord][xcord] = player;
   },
   getState: function() {
     return board;
-  },
-  changeColor: function() {
-    if (player === 'red') {
-      player = 'yellow';
-    } else {
-      player = 'red';
-    }
   },
   checkVertical: function() {
     var currval = null;

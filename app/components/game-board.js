@@ -1,17 +1,16 @@
 import Ember from 'ember';
-import $ from 'jquery';
 
 
 export default Ember.Component.extend({
-  message: { board: '' },
   /* to talk to the server */
+  player: '',
   init: function() {
     this._super();
     var socket = this.get('websockets').socketFor('ws://localhost:3001/');
     socket.on('open', this.myOpenHandler, this);
     socket.on('message', this.myMessageHandler, this);
     socket.on('close', function(event) {
-        console.log('closed');
+      console.log('closed');
     }, this);
   },
   myOpenHandler: function(event) {
@@ -19,19 +18,38 @@ export default Ember.Component.extend({
   },
   //handler that handles incoming messages from server
   myMessageHandler: function(event) {
-    console.log('Message: ' + event.data);
+    var recvMessage = JSON.parse(event.data);
+    var player = recvMessage.playerTurn;
+    this.set('player', player);
+    this.updateTheBoard(JSON.parse(recvMessage.serverBoard));
   },
-  didInsertElement: function(){
-    /*
-    Ember.$('body').on('mousemove', function(e){
-      Ember.$("#follow").css({
-        left: e.pageX,
-        top: e.pageY
-      });
-    });
-    */
+  updateTheBoard: function(board) {
+    console.log("updating from server : " + board)
+    this.get('connect4').setBoard(board);
+    for (var y = 0; y <= 5; y++) {
+      for (var x = 0; x <= 6; x++) {
+        if (board[y][x] != 0) {
+          var cell = this.$("tr:eq(" + y + ")").find('td').eq(x);
+          cell.children('button').addClass(board[y][x]);
+        }
+      }
+    }
+    this.checkWin();
   },
-  player1: true,
+  checkWin: function(){
+        if (this.get('connect4').checkVertical() || this.get('connect4').checkHorizontal() || this.get('connect4').checkDiagonal()) {
+          var winningPlayer = '';
+          if (this.get('player') == 'red')
+            winningPlayer = 'YELLOW';
+          else
+            winningPlayer = 'RED';
+          Ember.$(':button').prop('disabled', true);
+          Ember.$('#player').text(winningPlayer + " WINS").css({
+            "font-weight": "bold",
+            "color": "pink"
+          });
+      }
+  },
   connect4: Ember.inject.service(),
   actions: {
     dothis: function() {
@@ -46,40 +64,13 @@ export default Ember.Component.extend({
         return;
       }
 
-      this.get('connect4').updateBoard(xcord, ycord);
+      //update the local board in local storage
+      this.get('connect4').updateBoard(xcord, ycord, this.get('player'));
 
-      //make new board
-      var board = this.get('connect4').getState();
-      for (var y = 0; y <= 5; y++) {
-        for (var x = 0; x <= 6; x++) {
-          if (board[y][x] != 0) {
-            var cell = this.$("tr:eq(" + y + ")").find('td').eq(x);
-            cell.children('button').addClass(board[y][x]);
-          }
-        }
-      }
-      if (this.get('connect4').checkVertical() || this.get('connect4').checkHorizontal() || this.get('connect4').checkDiagonal()) {
-        var player = "";
-        Ember.$(':button').prop('disabled', true);
-        if(this.get('player1'))
-        {
-          player = 'RED';
-        }
-        else {
-          player = "YELLOW";
-        }
-        Ember.$('#player').text(player + " WINS").css({"font-weight": "bold", "color": "pink"});
-        return;
-      }
-      this.get('connect4').changeColor();
       var socket = this.get('websockets').socketFor('ws://localhost:3001/');
-      socket.send(this.get('connect4').getState());
-      //this.$("#follow > button").attr('', 'yellow');
-    },
-    sendButtonPressed: function(message) {
-      var socket = this.get('websockets').socketFor('ws://localhost:3001/');
-      socket.send(message);
-      this.set('message', '');
+      var sendboard = this.get('connect4').getState();
+      sendboard = JSON.stringify(sendboard);
+      socket.send(sendboard);
     }
   }
 });
