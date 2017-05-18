@@ -36,19 +36,19 @@ export default Ember.Component.extend({
     }
     this.checkWin();
   },
-  checkWin: function(){
-        if (this.get('connect4').checkVertical() || this.get('connect4').checkHorizontal() || this.get('connect4').checkDiagonal()) {
-          var winningPlayer = '';
-          if (this.get('player') == 'red')
-            winningPlayer = 'YELLOW';
-          else
-            winningPlayer = 'RED';
-          Ember.$(':button').prop('disabled', true);
-          Ember.$('#player').text(winningPlayer + " WINS").css({
-            "font-weight": "bold",
-            "color": "pink"
-          });
-      }
+  checkWin: function() {
+    if (this.get('connect4').checkVertical() || this.get('connect4').checkHorizontal() || this.get('connect4').checkDiagonal()) {
+      var winningPlayer = '';
+      if (this.get('player') == 'red')
+        winningPlayer = 'YELLOW';
+      else
+        winningPlayer = 'RED';
+      Ember.$(':button').prop('disabled', true);
+      Ember.$('#player').text(winningPlayer + " WINS").css({
+        "font-weight": "bold",
+        "color": "pink"
+      });
+    }
   },
   connect4: Ember.inject.service(),
   actions: {
@@ -71,6 +71,20 @@ export default Ember.Component.extend({
       var sendboard = this.get('connect4').getState();
       sendboard = JSON.stringify(sendboard);
       socket.send(sendboard);
+    },
+    reset: function() {
+      let newBoard = [
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0, 0]
+      ];
+      var socket = this.get('websockets').socketFor('ws://localhost:3001/');
+      newBoard = JSON.stringify(newBoard);
+      socket.send(newBoard);
+      window.location.reload(true);
     }
   }
 });

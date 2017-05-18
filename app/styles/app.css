@@ -94,7 +94,9 @@ button.yellow {
   border-radius: 50%;
   border: 0;
 }
-
+#resetBtn{
+  margin-top: 15px;
+}
 .player {
   text-transform: capitalize;
 }
