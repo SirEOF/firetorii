@@ -2,7 +2,16 @@
 
 * Connect Four game using Ember.js and Firebase
 * Login with Facebook
-* Chat
+* Player with another player over your local connection
+
+## Project Scope
+
+This connect 4 game allows you to login via Facebook and play a fun game of Connect 4 over a local connection with another player. It is based on the honor code so don't make a move when it's not your turn!
+
+## Project Functionality
+- Log In via Facebook
+- Send the link to another player
+- Start playing!
 
 ## Contributors:
 
@@ -29,7 +38,6 @@ You will need the following things properly installed on your computer.
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
 * [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
 
 ## Installation
 
@@ -39,6 +47,7 @@ You will need the following things properly installed on your computer.
 
 ## Running / Development
 
+* `node serve.js`
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
